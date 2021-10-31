@@ -84,7 +84,7 @@ function requestApi(functionId, cookie, body = {}) {
             headers: {
                 "Cookie": cookie,
                 "origin": "https://h5.m.jd.com",
-                "referer": "https://h5.m.jd.com/babelDiy/Zeus/2NUvze9e1uWf4amBhe1AV6ynmSuH/index.html",
+                "referer": "https://h5.m.jd.com/babelDiy/Zeus/4ZK4ZpvoSreRB92RRo8bpJAQNoTq/index.html",
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "X-Requested-With": "com.jingdong.app.mall",
                 "User-Agent": ua,
