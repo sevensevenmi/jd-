@@ -91,8 +91,8 @@ function requestApi(functionId, cookie, body = {}) {
 				"Accept": "*/*",
 				"Referer": "https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html",
 				"Content-Length": "56",
-				"Accept-Language": "zh-cn"
-				"User-Agent": ua,
+				"Accept-Language": "zh-cn",
+				"User-Agent": ua
             },
             body: `body=${escape(JSON.stringify(body))}`,
         }, (_, resp, data) => {
