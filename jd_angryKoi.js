@@ -80,19 +80,14 @@ function open(help){
 function requestApi(functionId, cookie, body = {}) {
     return new Promise(resolve => {
         $.post({
-            url: `${JD_API_HOST}/api?appid=jinlihongbao&functionId=${functionId}&loginType=2&client=jinlihongbao&t=${new Date().getTime() * 1000}&clientVersion=10.2.2&osVersion=AndroidOS&d_brand=Xiaomi&d_model=Xiaomi`,
+            url: `${JD_API_HOST}/api?appid=jinlihongbao&functionId=${functionId}&loginType=2&client=jinlihongbao&clientVersion=10.2.2&osVersion=AndroidOS&d_brand=Xiaomi&d_model=Xiaomi`,
             headers: {
-				"Host": "api.m.jd.com",
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Origin": "https://happy.m.jd.com",
-				"Accept-Encoding": "gzip, deflate, br",
-				"Cookie": cookie,
-				"Connection": "keep-alive",
-				"Accept": "*/*",
-				"Referer": "https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html",
-				"Content-Length": "56",
-				"Accept-Language": "zh-cn"
-				"User-Agent": ua,
+                "Cookie": cookie,
+                "origin": "https://h5.m.jd.com",
+                "referer": "https://h5.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html",
+                'Content-Type': 'application/x-www-form-urlencoded',
+                "X-Requested-With": "com.jingdong.app.mall",
+                "User-Agent": ua,
             },
             body: `body=${escape(JSON.stringify(body))}`,
         }, (_, resp, data) => {
