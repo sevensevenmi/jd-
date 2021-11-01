@@ -83,17 +83,17 @@ function requestApi(functionId, cookie, body = {}) {
 			
             url: `${JD_API_HOST}?appid=jinlihongbao&functionId=${functionId}&loginType=2&client=jinlihongbao&t=${new Date().getTime() * 1000}&clientVersion=10.2.2&osVersion=iOS&d_brand=Xiaomi&d_model=Xiaomi`,
             headers: {
-				"Host": "api.m.jd.com"
+               "Host": "api.m.jd.com",
                 "Cookie": cookie,
                 "origin": "https://happy.m.jd.com",
                 "referer": "https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html",
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "X-Requested-With": "com.jingdong.app.mall",
                 "User-Agent": ua,
-				"Accept-Language": "zh-cn"
-				"Accept": "*/*",
-				"Accept-Encoding": "gzip, deflate, br",
-				"Connection": "keep-alive",
+               "Accept-Language": "zh-cn",
+               "Accept": "*/*",
+               "Accept-Encoding": "gzip, deflate, br",
+               "Connection": "keep-alive",
 				
             },
             body: `body=${escape(JSON.stringify(body))}`,
