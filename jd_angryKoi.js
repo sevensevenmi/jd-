@@ -7,7 +7,7 @@ TG学习交流群：https://t.me/cdles
 */
 const $ = new Env("愤怒的锦鲤")
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
+const ua = `jdapp;android;10.2.2;11;4373169333533346-5633466623367363;model/M2011K2C;addressid/6511073045;aid/47a9353de3df2c76;oaid/043970b71db85df4;osVer/30;appBuild/91077;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2011K2C Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045735 Mobile Safari/537.36`
 var kois = process.env.kois ?? ""
 let cookiesArr = []
 var helps = [];
@@ -80,14 +80,21 @@ function open(help){
 function requestApi(functionId, cookie, body = {}) {
     return new Promise(resolve => {
         $.post({
-            url: `${JD_API_HOST}/api?appid=jd_mp_h5&functionId=${functionId}&loginType=2&client=jd_mp_h5&clientVersion=10.0.5&osVersion=AndroidOS&d_brand=Xiaomi&d_model=Xiaomi`,
+			
+            url: `${JD_API_HOST}?appid=jinlihongbao&functionId=${functionId}&loginType=2&client=jinlihongbao&clientVersion=10.2.2&osVersion=iOS&d_brand=Xiaomi&d_model=Xiaomi&t=${new Date().getTime() * 1000}`,
             headers: {
+				"Host": "api.m.jd.com"
                 "Cookie": cookie,
-                "origin": "https://h5.m.jd.com",
-                "referer": "https://h5.m.jd.com/babelDiy/Zeus/4ZK4ZpvoSreRB92RRo8bpJAQNoTq/index.html",
+                "origin": "https://happy.m.jd.com",
+                "referer": "https://happy.m.jd.com/babelDiy/zjyw/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html",
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "X-Requested-With": "com.jingdong.app.mall",
                 "User-Agent": ua,
+				"Accept-Language": "zh-cn"
+				"Accept": "*/*",
+				"Accept-Encoding": "gzip, deflate, br",
+				"Connection": "keep-alive",
+				
             },
             body: `body=${escape(JSON.stringify(body))}`,
         }, (_, resp, data) => {
