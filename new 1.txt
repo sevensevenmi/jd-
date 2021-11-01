@@ -1,0 +1,21 @@
+POST /api?appid=jinlihongbao&functionId=jinli_h5assist&loginType=2&client=jinlihongbao&t=1635755049811&clientVersion=10.2.2&osVersion=-1 HTTP/1.1
+Host: api.m.jd.com
+Connection: keep-alive
+Content-Length: 1599
+Accept: application/json, text/plain, */*
+Origin: https://happy.m.jd.com
+User-Agent: jdapp;android;10.2.2;11;4373169333533346-5633466623367363;model/M2011K2C;addressid/6511073045;aid/47a9353de3df2c76;oaid/043970b71db85df4;osVer/30;appBuild/91077;partner/xiaomi001;eufv/1;jdSupportDarkMode/0;Mozilla/5.0 (Linux; Android 11; M2011K2C Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045735 Mobile Safari/537.36
+Sec-Fetch-Mode: cors
+Content-Type: application/x-www-form-urlencoded
+X-Requested-With: com.jingdong.app.mall
+Sec-Fetch-Site: same-site
+Referer: https://happy.m.jd.com/babelDiy/Zeus/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html?asid=379091397&lng=104.062595&lat=30.539969&un_area=22_1930_49324_49398
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: pt_key=app_openAAJhYk-8ADAa4Ba2ZYWxu6iZBZ0K1LWe-h7hwcOAVqgIGlXaFqwKwR0_9vK_PB6jcYflZlmnU7g; pt_pin=zq1121734772; pwdt_id=zq1121734772; sid=8a20e7fdb574b07aac06fd829fd726aw; __jdc=122270672; retina=1; cid=8; webp=1; shshshfpa=42faaab3-625e-855c-14a1-23078876660d-1633923681; shshshfpb=ow8D5G4O6LRsEjUXdFGdU9g%3D%3D; visitkey=41433233310953566; share_cpin=; share_open_id=; share_gpin=; shareChannel=; source_module=; erp=; sc_width=412; deviceVersion=6.2; deviceOS=android; deviceOSVersion=11; deviceName=QQBrowser; equipmentId=ZAZ47GGGO54XBAPEJDHJTJ3QPY3E7II4SUQYCRFFDOI7L4HTNL4QG43V34X5FQ7I5LCWRZNXQ7AA2HH6NQ7IVEP5SI; fingerprint=e75ff50a9cfc7bb3897dc46ec14c1bef; autoOpenApp_pgDownCloseDate_auto=1634871552742_21600000; cartLastOpTime=1635433893; cartNum=5; wxa_level=1; wq_ug=15; channel=; PPRD_P=UUID.1633832894121799181490-LOGID.1635678879381.808104293; __jdv=122270672%7Cweixin110.qq.com%7Ct_2012644215_%7Cjingfen%7Cdb16396f6e8b4043a19129e229749757%7C1635732767462; __wga=1635732776811.1635732776811.1635663333121.1634200668721.1.9; __jxjda=122270672.1633832894121799181490.1633832894.1635678879.1635732776.74; jxsid_s_u=https%3A//wqs.jd.com/sns/202012/21/drainage/index.html; jxsid_s_t=1635732777226; unpl=V2_ZzNtbUcFQBR3D0QHKxsOAmIGEg1KAEYdIVxEUngYWQZkVkBeclRCFnUURlVnGlgUZAEZXkVcRxZFCEZkexhdBGEFFlxHUHMldQlHVHoeVQZuASJeQmdCJXUPRFB7H1gCZgoRWkVXQhJ9CE9Teh1UNVcDGlpyV0IUdAlOUHwfVQVhMyJccldCFXQAdlRzG1QCbgQaWkJnFXt1CUdVex1ZBGEKX11FVUcVcwxBVXIaWwJnAhVVQl5EFHEAdlVLGg%3D%3D; shshshfp=9ca78be17c470766ff32620f5f44a6ed; __jda=122270672.1633832894121799181490.1633832894.1635751387.1635754802.143; __jdb=122270672.2.1633832894121799181490|143.1635754802; mba_sid=168.9; pre_session=2RedIs7VnZK8Aa7WqgnRphtRleG22UdV|506; pre_seq=3; joyytoken=50087MDFqV0p2VTAxMQ==.W2F5Q2JfYnpCYltieggsLWYnRCRcAHkAK1t7fFptRmY0RCtbKSUBbS5iDUIaXBsYBRAAAhISEy0zH08yV2o0.83d05021; __jd_ref_cls=Babel_dev_expo_other_Banner; mba_muid=1633832894121799181490.168.1635755047710
+
+
+
+
+
+https://api.m.jd.com/api?appid=jinlihongbao&functionId=jinli_h5assist&loginType=2&client=jinlihongbao&t=1635755049811&clientVersion=10.2.2&osVersion=-1
