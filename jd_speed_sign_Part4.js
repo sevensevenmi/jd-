@@ -28,7 +28,7 @@ const JD_API_HOST = 'https://api.m.jd.com/', actCode = 'visa-card-001';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  let lnStartAcc=Math.ceil(cookiesArr.length/4)*4;
+  let lnStartAcc=Math.ceil(cookiesArr.length/4)*3;
   let lnTotalAcc=cookiesArr.length;
   if (lnStartAcc>=lnTotalAcc){
 	  console.log(`账号太少不需要第三个任务,跳出\n`);
