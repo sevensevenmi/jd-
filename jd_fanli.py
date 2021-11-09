@@ -95,7 +95,7 @@ def saveTaskRecord1(ck, taskId, uid, tt):
 
 
 if __name__ == '__main__':
-    printf("🔔京东饭粒, 开始!\n\n活动入口：https://u.jd.com/ywEoeYu\n\n")
+    printf("🔔京东饭粒, 开始!\n\n活动入口：https://u.jd.com/yL9SRss\n\n")
     cks = os.environ["JD_COOKIE"].split("&")
     for ck in cks:
         ptpin = re.findall(r"pt_pin=(.*?);", ck)[0]
