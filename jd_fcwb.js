@@ -27,7 +27,7 @@ let cookiesArr = [], cookie = '', message;
 let roundList =[]
 let insertCodes = []
 let inviteCodes = []
-let linkId = "yCcpwTLIbY6pjaM42ACUVg"
+let linkId = "pTTvJeSTrpthgk9ASBVGsw"
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -339,7 +339,7 @@ function getAuthorShareCode(url) {
 
 function taskurl(functionId,body) {
     return {
-        url: `${JD_API_HOST}/?functionId=${functionId}&body=${escape(JSON.stringify(body))}&t=1635561607124&appid=activities_platform&client=H5&clientVersion=1.0.0`,
+        url: `${JD_API_HOST}/?functionId=${functionId}&body=${escape(JSON.stringify(body))}&t=1636733856802&appid=activities_platform&client=H5&clientVersion=1.0.0`,
 
         headers: {
 
