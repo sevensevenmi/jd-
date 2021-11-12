@@ -17,7 +17,7 @@ cron "6 0-23/1 * * *" script-path=https://raw.githubusercontent.com/jiulan/platy
 发财挖宝 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_fcwb.js, cronexpr="6 0-23/1 * * *", timeout=3600, enable=true
  */
 const $ = new Env('发财挖宝');
-const notify = $.isNode() ? require('./sendNotify') : '';
+const notify = $.isNode() ? require('./sendNotify.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const JD_API_HOST = 'https://api.m.jd.com';
