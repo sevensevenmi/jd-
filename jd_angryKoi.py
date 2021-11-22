@@ -1,5 +1,5 @@
 '''
-cron: 5 0 * * *
+cron: 1 0 * * *
 new Env('安静的锦鲤');
 入口: 京东首页>领券>锦鲤红包
 变量: JD_COOKIE,kois
