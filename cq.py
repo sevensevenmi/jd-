@@ -1,13 +1,13 @@
 """
 const $ = new Env("定时重启猫");
 在 1 3 5 7 13 17 23 的56分重启猫
-
-cron:
-56 1,3,5,7,13,17,23 * * * cq.py
+定时重启猫
 
 路由器账号密码
 CMCCAdmin
 aDm8H%MdA
+cron:
+56 1,3,5,7,13,17,23 * * * cq.py
 """
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
