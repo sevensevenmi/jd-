@@ -20,3 +20,7 @@ with open("/opt/ip.txt", 'a') as file_object:
     file_object.write('----出口ip: ')
     file_object.write(ip)
     file_object.write('\n')
+print(t)
+print('----出口ip: ')
+print(ip)
+print('\n')

@@ -52,3 +52,7 @@ with open("/ql/log/sevensevenmi_jd-_cq/cqrecord.txt", 'a') as file_object:
     file_object.write('\n')
 
 driver.close()
+print(t)
+print('---重启成功---出口ip:')
+print(ip)
+print('\n')
