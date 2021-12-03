@@ -40,12 +40,12 @@ driver.find_element(By.XPATH,"/html/body/div[5]/table/tbody/tr[3]/td/input[1]").
 for i in range(10):
     print("success restart!!!")
 
+time.sleep(180)
 t=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 bip = urllib.request.urlopen('http://ifconfig.me/ip').read()
 #ip = str(bip, encoding="utf-8")
 ip = bytes.decode(bip)
 with open("/ql/log/sevensevenmi_jd-_cq/cqrecord.txt", 'a') as file_object:
-    time.sleep(180)
     file_object.write(t)
     file_object.write('---重启成功---出口ip:')
     file_object.write(ip)
