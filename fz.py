@@ -2,12 +2,12 @@
 
 
 """
-const $ = new Env("同程签到");
+const $ = new Env("飞猪签到");
 
-同程签到
+飞猪签到
 
 cron:
-56 7 * * * tc.py
+56 7 * * * fz.py
 """
 
 # -*- coding: utf8 -*-
