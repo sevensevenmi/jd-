@@ -7,7 +7,7 @@ const $ = new Env("飞猪签到");
 飞猪签到
 
 cron:
-56 7 * * * fz.py
+0 7 * * * fz.py
 """
 
 # -*- coding: utf8 -*-
