@@ -1,4 +1,12 @@
 # -*- coding: utf8 -*-
+
+"""
+const $ = new Env("携程签到");
+携程签到
+cron:
+0 7 * * * xc.py
+"""
+
 import time
 
 import requests
