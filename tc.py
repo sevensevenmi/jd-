@@ -24,10 +24,9 @@ def start():
     response = requests.post(url, data=json.dumps(pyload), headers=headers).text
 
     if "请求成功" in response:
-        print("签到成功")
+        print("同程签到成功")
     else:
         print(response)
-def main_handler(event, context):
-    return start()
+
 if __name__=='__main__':
-    start();
+    start()
