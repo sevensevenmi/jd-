@@ -3,7 +3,7 @@ const $ = new Env("去哪儿签到");
 去哪儿签到
 
 cron:
-0 7 * * * tc.py
+0 7 * * * qd_.py
 """
 
 

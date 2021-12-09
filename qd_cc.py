@@ -1,3 +1,13 @@
+"""
+const $ = new Env("曹操出行");
+曹操出行
+
+cron:
+0 7 * * * qd_cc.py
+"""
+
+# -*- coding: utf8 -*-
+
 import requests
 
 def test():

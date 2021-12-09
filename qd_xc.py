@@ -4,7 +4,7 @@
 const $ = new Env("携程签到");
 携程签到
 cron:
-0 7 * * * xc.py
+0 7 * * * qd_xc.py
 """
 
 import time
