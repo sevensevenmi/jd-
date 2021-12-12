@@ -1,14 +1,14 @@
 /*
-七MI红包
-cron:0 0,12,18 * * * jd_redE.js
+红包
+cron:0 0,12,18 * * * jd_red.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
 https://u.jd.com/vCb9WHH
 */
-let rebateCodes = '' // 返利code
+let rebateCodes = 'vCb9WHH' // 返利code
 
-const $ = new Env("七MI红包");
+const $ = new Env("红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [];
 if ($.isNode()) {
@@ -21,10 +21,9 @@ if ($.isNode()) {
   cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 rebateCodes = $.isNode() ? (process.env.gua_redEnvelope_rebateCodes ? process.env.gua_redEnvelope_rebateCodes : `${rebateCodes}`) : ($.getdata('gua_redEnvelope_rebateCodes') ? $.getdata('gua_redEnvelope_rebateCodes') : `${rebateCodes}`);
-let codeLsit = ['vCb9WHH']
+let codeLsit = ['nLmoVvf']
 if(rebateCodes){
-  codeLsit = ['']
-  codeLsit.push(rebateCodes)
+  codeLsit = [`${rebateCodes}`]
 }
 $.code = codeLsit[random(0, codeLsit.length)];
 !(async () => {
@@ -84,7 +83,6 @@ async function main() {
     let arr = getBody($.UA, $.url2);
     await getEid(arr);
     await getcouponUrl()
-    console.log($.couponUrl)
     if(!$.eid){
       $.eid = -1
     }
@@ -113,7 +111,7 @@ function getcouponUrl() {
           console.log(`${$.name} getcouponUrl API请求失败，请检查网路重试`);
         } else {
           if (data) {
-            $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || ''
+            $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || 'RhdnEUlBFEc8FBpAEUBoRUsaFBBrRR5BQhBtQhMRFhBpERtHFkA4FgYbHBNnHwYRCB1mEBMa'
           }
         }
       } catch (e) {
