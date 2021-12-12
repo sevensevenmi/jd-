@@ -1,6 +1,6 @@
 /*
-暖暖红包
-cron:0 0,12,18 * * * jd_redEnvelope.js
+七MI红包
+cron:0 0,12,18 * * * jd_redE.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
@@ -8,7 +8,7 @@ https://u.jd.com/vMCZMkG
 */
 let rebateCodes = '' // 返利code
 
-const $ = new Env("暖暖红包");
+const $ = new Env("七MI红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [];
 if ($.isNode()) {
