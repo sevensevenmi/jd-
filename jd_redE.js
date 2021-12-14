@@ -86,7 +86,7 @@ async function main() {
     if(!$.eid){
       $.eid = -1
     }
-    await getCoupons("");
+    //await getCoupons("");
     await $.wait(2000);
   }
 }
@@ -162,53 +162,57 @@ function randomString(e) {
   return n;
 }
 
-async function getCoupons() {
-  return new Promise((resolve) => {
-    let opts = {
-      url: `https://api.m.jd.com/api?functionId=getUnionFreeCoupon&appid=u&loginType=2&_=${Date.now()}&body=${encodeURIComponent(JSON.stringify({"couponUrl":$.couponUrl,"source":20118}))}`,
-      headers: {
-        "Host": "api.m.jd.com",
-        "Accept": "application/json, text/plain, */*",
-        "Origin": "https://prodev.m.jd.com",
-        "Accept-Encoding": "gzip, deflate, br",
-        "User-Agent": $.UA,
-        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-        "Referer": "https://prodev.m.jd.com/",
-        "Cookie": `${cookie} ${$.newCookie}`
+
+
+// async function getCoupons() {
+  // return new Promise((resolve) => {
+    // let opts = {
+      // url: `https://api.m.jd.com/api?functionId=getUnionFreeCoupon&appid=u&loginType=2&_=${Date.now()}&body=${encodeURIComponent(JSON.stringify({"couponUrl":$.couponUrl,"source":20118}))}`,
+      // headers: {
+        // "Host": "api.m.jd.com",
+        // "Accept": "application/json, text/plain, */*",
+        // "Origin": "https://prodev.m.jd.com",
+        // "Accept-Encoding": "gzip, deflate, br",
+        // "User-Agent": $.UA,
+        // "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+        // "Referer": "https://prodev.m.jd.com/",
+        // "Cookie": `${cookie} ${$.newCookie}`
   
-      }
-    };
-    $.get(opts, async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${$.toStr(err)}`);
-          console.log(`${$.name} API请求失败，请检查网路重试`);
-        } else {
-          let res = $.toObj(data, data);
-          if (typeof res == "object") {
-            if (res.msg) {
-              console.log("异常：" + res.msg);
-            }
-            if (res.msg.indexOf("上限") !== -1 || res.msg.indexOf("未登录") !== -1) {
-              $.max = true;
-            }
-            if (res.code == 200 && res.data) {
-              if (res.data.couponType == 2) {
-                console.log(`获得红包：${res.data.discount || 0}元`);
-              }
-            }
-          } else {
-            console.log(data);
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp);
-      } finally {
-        resolve();
-      }
-    });
-  });
-}
+      // }
+    // };
+    // $.get(opts, async (err, resp, data) => {
+      // try {
+        // if (err) {
+          // console.log(`${$.toStr(err)}`);
+          // console.log(`${$.name} API请求失败，请检查网路重试`);
+        // } else {
+          // let res = $.toObj(data, data);
+          // if (typeof res == "object") {
+            // if (res.msg) {
+              // console.log("异常：" + res.msg);
+            // }
+            // if (res.msg.indexOf("上限") !== -1 || res.msg.indexOf("未登录") !== -1) {
+              // $.max = true;
+            // }
+            // if (res.code == 200 && res.data) {
+              // if (res.data.couponType == 2) {
+                // console.log(`获得红包：${res.data.discount || 0}元`);
+              // }
+            // }
+          // } else {
+            // console.log(data);
+          // }
+        // }
+      // } catch (e) {
+        // $.logErr(e, resp);
+      // } finally {
+        // resolve();
+      // }
+    // });
+  // });
+// }
+
+
 
 async function getInfo2() {
   return new Promise((resolve) => {
