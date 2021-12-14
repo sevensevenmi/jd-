@@ -86,6 +86,7 @@ async function main() {
     if(!$.eid){
       $.eid = -1
     }
+	console.log(`返利成功`);
     //await getCoupons("");
     await $.wait(2000);
   }
