@@ -1,14 +1,14 @@
 /*
-红包
-cron:0 0,12,18 * * * jd_red.js
+七MI红包
+cron:0 0,12,18 * * * jd_redE.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
-https://u.jd.com/vw3bN9x
+https://u.jd.com/vMgadap
 */
-let rebateCodes = 'vw3bN9x' // 返利code
+let rebateCodes = '' // 返利code
 
-const $ = new Env("红包");
+const $ = new Env("七MI红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [];
 if ($.isNode()) {
@@ -21,9 +21,10 @@ if ($.isNode()) {
   cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 rebateCodes = $.isNode() ? (process.env.gua_redEnvelope_rebateCodes ? process.env.gua_redEnvelope_rebateCodes : `${rebateCodes}`) : ($.getdata('gua_redEnvelope_rebateCodes') ? $.getdata('gua_redEnvelope_rebateCodes') : `${rebateCodes}`);
-let codeLsit = ['nLmoVvf']
+let codeLsit = ['vMgadap']
 if(rebateCodes){
-  codeLsit = [`${rebateCodes}`]
+  codeLsit = ['']
+  codeLsit.push(rebateCodes)
 }
 $.code = codeLsit[random(0, codeLsit.length)];
 !(async () => {
@@ -56,7 +57,6 @@ $.code = codeLsit[random(0, codeLsit.length)];
   .finally(() => {
     $.done();
   });
-
 async function main() {
   let userName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1]);
   $.UA = `jdapp;iPhone;10.2.0;13.1.2;${randomString(40)};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460622;appBuild/167853;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`;
@@ -68,11 +68,29 @@ async function main() {
     $.url2 = "";
     $.eid = "";
     await getInfo1();
-	console.log(`返利成功`);
+    if (!$.url1) {
+      console.log(`${userName},初始化1失败,可能黑号`);
+      $.hotFlag = true;
+      break;
+    }
+    await getInfo2();
+    if (!$.url2) {
+      console.log(`${userName},初始化2失败,可能黑号`);
+      $.hotFlag = true;
+      break;
+    }
+    $.actId = ($.url2.match(/mall\/active\/([^/]+)\/index\.html/) && $.url2.match(/mall\/active\/([^/]+)\/index\.html/)[1]) || "3nJaTysLg4QmXejNy3R8uWwNR1x8";
+    let arr = getBody($.UA, $.url2);
+    await getEid(arr);
+    await getcouponUrl()
+    console.log($.couponUrl)
+    if(!$.eid){
+      $.eid = -1
+    }
+    //await getCoupons("");
     await $.wait(2000);
   }
 }
-
 function getcouponUrl() {
   return new Promise((resolve) => {
     const options = {
@@ -93,7 +111,7 @@ function getcouponUrl() {
           console.log(`${$.name} getcouponUrl API请求失败，请检查网路重试`);
         } else {
           if (data) {
-            $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || 'RhdnEUlBFEc8FBpAEUBoRUsaFBBrRR5BQhBtQhMRFhBpERtHFkA4FgYbHBNnHwYRCB1mEBMa'
+            $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || ''
           }
         }
       } catch (e) {
@@ -143,59 +161,53 @@ function randomString(e) {
   for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
   return n;
 }
-
-
-
-// async function getCoupons() {
-  // return new Promise((resolve) => {
-    // let opts = {
-      // url: `https://api.m.jd.com/api?functionId=getUnionFreeCoupon&appid=u&loginType=2&_=${Date.now()}&body=${encodeURIComponent(JSON.stringify({"couponUrl":$.couponUrl,"source":20118}))}`,
-      // headers: {
-        // "Host": "api.m.jd.com",
-        // "Accept": "application/json, text/plain, */*",
-        // "Origin": "https://prodev.m.jd.com",
-        // "Accept-Encoding": "gzip, deflate, br",
-        // "User-Agent": $.UA,
-        // "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-        // "Referer": "https://prodev.m.jd.com/",
-        // "Cookie": `${cookie} ${$.newCookie}`
+async function getCoupons() {
+  return new Promise((resolve) => {
+    let opts = {
+      url: `https://api.m.jd.com/api?functionId=getUnionFreeCoupon&appid=u&loginType=2&_=${Date.now()}&body=${encodeURIComponent(JSON.stringify({"couponUrl":$.couponUrl,"source":20118}))}`,
+      headers: {
+        "Host": "api.m.jd.com",
+        "Accept": "application/json, text/plain, */*",
+        "Origin": "https://prodev.m.jd.com",
+        "Accept-Encoding": "gzip, deflate, br",
+        "User-Agent": $.UA,
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+        "Referer": "https://prodev.m.jd.com/",
+        "Cookie": `${cookie} ${$.newCookie}`
   
-      // }
-    // };
-    // $.get(opts, async (err, resp, data) => {
-      // try {
-        // if (err) {
-          // console.log(`${$.toStr(err)}`);
-          // console.log(`${$.name} API请求失败，请检查网路重试`);
-        // } else {
-          // let res = $.toObj(data, data);
-          // if (typeof res == "object") {
-            // if (res.msg) {
-              // console.log("异常：" + res.msg);
-            // }
-            // if (res.msg.indexOf("上限") !== -1 || res.msg.indexOf("未登录") !== -1) {
-              // $.max = true;
-            // }
-            // if (res.code == 200 && res.data) {
-              // if (res.data.couponType == 2) {
-                // console.log(`获得红包：${res.data.discount || 0}元`);
-              // }
-            // }
-          // } else {
-            // console.log(data);
-          // }
-        // }
-      // } catch (e) {
-        // $.logErr(e, resp);
-      // } finally {
-        // resolve();
-      // }
-    // });
-  // });
-// }
-
-
-
+      }
+    };
+    $.get(opts, async (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${$.toStr(err)}`);
+          console.log(`${$.name} API请求失败，请检查网路重试`);
+        } else {
+          let res = $.toObj(data, data);
+          if (typeof res == "object") {
+            if (res.msg) {
+              console.log("异常：" + res.msg);
+            }
+            if (res.msg.indexOf("上限") !== -1 || res.msg.indexOf("未登录") !== -1) {
+              $.max = true;
+            }
+            if (res.code == 200 && res.data) {
+              if (res.data.couponType == 2) {
+                console.log(`获得红包：${res.data.discount || 0}元`);
+              }
+            }
+          } else {
+            console.log(data);
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
+    });
+  });
+}
 async function getInfo2() {
   return new Promise((resolve) => {
     const options = {
@@ -233,7 +245,6 @@ async function getInfo2() {
     });
   });
 }
-
 async function getInfo1(cookie) {
   return new Promise((resolve) => {
     const options = {
@@ -260,6 +271,7 @@ async function getInfo1(cookie) {
             }
           }
         }
+        $.url1 = (data.match(/(https:\/\/u\.jd\.com\/jda[^']+)/) && data.match(/(https:\/\/u\.jd\.com\/jda[^']+)/)[1]) || "";
       } catch (e) {
         $.logErr(e, resp);
       } finally {
