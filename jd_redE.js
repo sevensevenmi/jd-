@@ -68,26 +68,7 @@ async function main() {
     $.url2 = "";
     $.eid = "";
     await getInfo1();
-    if (!$.url1) {
-      console.log(`${userName},初始化1失败,可能黑号`);
-      $.hotFlag = true;
-      break;
-    }
-    await getInfo2();
-    if (!$.url2) {
-      console.log(`${userName},初始化2失败,可能黑号`);
-      $.hotFlag = true;
-      break;
-    }
-    $.actId = ($.url2.match(/mall\/active\/([^/]+)\/index\.html/) && $.url2.match(/mall\/active\/([^/]+)\/index\.html/)[1]) || "3nJaTysLg4QmXejNy3R8uWwNR1x8";
-    let arr = getBody($.UA, $.url2);
-    await getEid(arr);
-    await getcouponUrl()
-    if(!$.eid){
-      $.eid = -1
-    }
 	console.log(`返利成功`);
-    //await getCoupons("");
     await $.wait(2000);
   }
 }
@@ -279,7 +260,6 @@ async function getInfo1(cookie) {
             }
           }
         }
-        $.url1 = (data.match(/(https:\/\/u\.jd\.com\/jda[^']+)/) && data.match(/(https:\/\/u\.jd\.com\/jda[^']+)/)[1]) || "";
       } catch (e) {
         $.logErr(e, resp);
       } finally {
