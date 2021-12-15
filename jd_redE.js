@@ -88,6 +88,7 @@ async function main() {
       $.eid = -1
     }
     //await getCoupons("");
+	console.log(`访问成功，请查看返利`);
     await $.wait(2000);
   }
 }
