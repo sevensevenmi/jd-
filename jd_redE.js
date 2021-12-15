@@ -4,9 +4,9 @@ cron:0 0,12,18 * * * jd_red.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
-https://u.jd.com/vCb9WHH
+https://u.jd.com/vw3bN9x
 */
-let rebateCodes = 'vCb9WHH' // 返利code
+let rebateCodes = 'vw3bN9x' // 返利code
 
 const $ = new Env("红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
