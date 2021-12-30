@@ -4,9 +4,9 @@ cron:0 0,12,18 * * * jd_redE.js
 返利变量：gua_redEnvelope_rebateCodes，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量gua_redEnvelope_rebateCodes
 例：
 export gua_redEnvelope_rebateCodes="你的返利code"
-https://u.jd.com/vMgadap
+https://u.jd.com/Yw3CsVS
 */
-let rebateCodes = '' // 返利code
+let rebateCodes = 'Yw3CsVS' // 返利code
 
 const $ = new Env("七MI红包");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
@@ -21,7 +21,7 @@ if ($.isNode()) {
   cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 rebateCodes = $.isNode() ? (process.env.gua_redEnvelope_rebateCodes ? process.env.gua_redEnvelope_rebateCodes : `${rebateCodes}`) : ($.getdata('gua_redEnvelope_rebateCodes') ? $.getdata('gua_redEnvelope_rebateCodes') : `${rebateCodes}`);
-let codeLsit = ['vMgadap']
+let codeLsit = ['Yw3CsVS']
 if(rebateCodes){
   codeLsit = ['']
   codeLsit.push(rebateCodes)
@@ -79,7 +79,7 @@ async function main() {
       $.hotFlag = true;
       break;
     }
-    $.actId = ($.url2.match(/mall\/active\/([^/]+)\/index\.html/) && $.url2.match(/mall\/active\/([^/]+)\/index\.html/)[1]) || "3nJaTysLg4QmXejNy3R8uWwNR1x8";
+    $.actId = ($.url2.match(/mall\/active\/([^/]+)\/index\.html/) && $.url2.match(/mall\/active\/([^/]+)\/index\.html/)[1]) || "c46tGzwvXueH7uKSjpXmPQP9Nod";
     let arr = getBody($.UA, $.url2);
     await getEid(arr);
     await getcouponUrl()
