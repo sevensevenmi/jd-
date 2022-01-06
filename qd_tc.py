@@ -22,7 +22,7 @@ def start():
     url = url1
     pyload = {"isReceive":1,"memberId":"c9d47dd6f69f3d31ca49f7d0a936a945","platId":100,"reqFrom":"app","regid":"","deviceId":"208dd19477e57379"}
     response = requests.post(url, data=json.dumps(pyload), headers=headers).text
-
+    print(response)
     if "请求成功" in response:
         print("同程签到成功")
     else:
