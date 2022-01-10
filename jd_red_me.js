@@ -9,7 +9,7 @@ https://u.jd.com/StMfmOB
 
 let rebateCodes = 'StMfmOB'
 
-const $ = new Env('2022年年货节京享红包活动🧧');
+const $ = new Env('年货节');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const Faker = $.isNode() ? require('./utils/sign_graphics_validate.js') : '';
