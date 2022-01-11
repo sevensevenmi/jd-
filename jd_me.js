@@ -4,12 +4,12 @@ ck1助力 作者
 其余助力ck1
 https://u.jd.com/StMfmOB
 跳转到app 可查看助力情况
-0 0,8,20,22 * * * gua_1111RedEnvelope.js
+0 0,8,20,22 * * * jd_me.js
 */
 
 let rebateCodes = 'StMfmOB'
 
-const $ = new Env('年货节');
+const $ = new Env('七MI节');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const Faker = $.isNode() ? require('./utils/sign_graphics_validate.js') : '';
