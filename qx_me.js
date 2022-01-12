@@ -3,8 +3,10 @@
 ck1助力 作者
 其余助力ck1
 https://u.jd.com/StMfmOB
-跳转到app 可查看助力情况
-0 0,8,20,22 * * * jd_me.js
+跳转到app 
+可查看助力情况
+[Script]
+cron "0 0,8,20,22 * * *" qx_me.js
 */
 
 let rebateCodes = 'StMfmOB'
