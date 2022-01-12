@@ -3,7 +3,7 @@
 
  [task_local]
 #搞基大神-推一推
-0 0 * * * http://47.101.146.160/scripts/jd_tyt.js, tag=搞基大神-推一推, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0 * * * http://47.101.146.160/scripts/qx_tyt.js, tag=搞基大神-推一推, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 
 const $ = new Env('推一推');

@@ -8,14 +8,14 @@
 =================================Quantumultx=========================
 [task_local]
 #邀请有礼
-08 11 * * * https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_yqyl.js, tag=邀请有礼, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+08 11 * * * qx_yqyl.js, tag=邀请有礼, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 =================================Loon===================================
 [Script]
-cron "08 11 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_yqyl.js,tag=邀请有礼
+cron "08 11 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/qx_yqyl.js,tag=邀请有礼
 ===================================Surge================================
-邀请有礼 = type=cron,cronexp="08 11 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_yqyl.js
+邀请有礼 = type=cron,cronexp="08 11 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/qx_yqyl.js
 ====================================小火箭=============================
-邀请有礼 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_yqyl.js, cronexpr="08 11 * * *", timeout=3600, enable=true
+邀请有礼 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/qx_yqyl.js, cronexpr="08 11 * * *", timeout=3600, enable=true
  */
 const $ = new Env('邀请有礼');
 const notify = $.isNode() ? require('./sendNotify') : '';
