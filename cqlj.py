@@ -28,9 +28,9 @@ time.sleep(1)
 
 driver.execute_script('document.getElementById("username").value="";')
 time.sleep(1)
-driver.find_element(By.NAME,"username").send_keys(username)
+driver.find_element(By.ID,"username").send_keys(username)
 driver.execute_script('document.getElementById("logincode").value="";')
-driver.find_element(By.NAME,"logincode").send_keys(password)
+driver.find_element(By.ID,"logincode").send_keys(password)
 driver.find_element(By.XPATH,"/html/body/div/div[3]/div/div/div/div/form/div[4]/a[1]").click()
 for i in range(10):
     print(driver.title)
