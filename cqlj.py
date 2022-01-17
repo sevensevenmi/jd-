@@ -22,8 +22,8 @@ chrome_options.add_argument('--headless') # 16年之后，chrome给出的解决�
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')  # root用户不加这条会无法运行
 driver = webdriver.Chrome(chrome_options=chrome_options)
-#driver.get("http://192.168.8.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
-driver.get("http://192.168.8.1/")
+#driver.get("http://192.168.1.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
+driver.get("http://192.168.1.1/")
 time.sleep(1)
 
 driver.execute_script('document.getElementById("username").value="";')
@@ -34,7 +34,7 @@ driver.find_element(By.NAME,"logincode").send_keys(password)
 driver.find_element(By.XPATH,"/html/body/div/div[3]/div/div/div/div/form/div[4]/a[1]").click()
 for i in range(10):
     print(driver.title)
-driver.get("http://192.168.8.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
+driver.get("http://192.168.1.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
 #driver.find_element(By.XPATH,"/html/body/div[3]/div[3]/div[2]/div[2]/table/tbody/tr[1]/td/input").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div[3]/div[2]/div[2]/table/tbody/tr[1]/td/input").click()
 driver.find_element(By.XPATH,"/html/body/div[5]/table/tbody/tr[3]/td/input[1]").click()
