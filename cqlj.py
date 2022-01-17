@@ -31,7 +31,7 @@ time.sleep(1)
 driver.find_element(By.ID,"username").send_keys(username)
 driver.execute_script('document.getElementById("logincode").value="";')
 driver.find_element(By.ID,"logincode").send_keys(password)
-driver.find_element(By.XPATH,"/html/body/div/div[3]/div/div/div/div/form/div[4]/a[1]").click()
+driver.find_element(By.XPATH,"/html/body/div/div[3]/div/div/div[2]/div[2]/form/div[3]/input").click()
 for i in range(10):
     print(driver.title)
 driver.get("http://192.168.1.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
