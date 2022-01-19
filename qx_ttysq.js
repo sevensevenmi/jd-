@@ -52,7 +52,6 @@ const JD_API_HOST = `https://m.jingxi.com`;
         }
     }
     let res = await getAuthorShareCode('https://qxhut.cn/json/ttysq2.json')
-    let res = [ ]
     if (!res) {
         res = await getAuthorShareCode('https://qxhut.cn/json/ttysq2.json')
     }
