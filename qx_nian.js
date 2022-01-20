@@ -1342,7 +1342,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: ``,
+      url: `https://code.chiang.fun/api/v1/jd/jdnian/read/${randomCount}/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -1370,7 +1370,7 @@ function readShareCodePk() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: ``,
+      url: `http://jd.turinglabs.net/api/v2/jd/nian/read/${randomCount}/`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
