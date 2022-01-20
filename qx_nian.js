@@ -39,8 +39,14 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [ ];
-const pkInviteCodes = [ ]
+const inviteCodes = [
+  `cgxZbDnLLbvT4kKFa2r4itMpof2y7`,
+  `cgxZbDnLLbvT4kKFa2r4itMpof2y7`
+];
+const pkInviteCodes = [
+  'IgNWdiLGaPadvlqJQnnKp27',
+  'IgNWdiLGaPadvlqJQnnKp27'
+]
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);
 const openUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wbbny.m.jd.com/babelDiy/Zeus/2cKMj86srRdhgWcKonfExzK4ZMBy/index.html%22%20%7D`;
 !(async () => {
