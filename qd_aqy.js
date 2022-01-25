@@ -14,7 +14,7 @@ JsBox, Node.js用户抓取Cookie说明：
 提取字母数字混合字段, 到&结束, 填入以下单引号内即可.
 */
 
-var cookie = 'P00004=.1642735092.ed892a3981; P00001=37OgeAFNkAQ79iup4C5m2QQY0ezXZgpscpWbm2aM9TGrvKalr7ZQRSxkIRb2LwllG8R798; P00007=37OgeAFNkAQ79iup4C5m2QQY0ezXZgpscpWbm2aM9TGrvKalr7ZQRSxkIRb2LwllG8R798; P00003=2023778179; P00002=%7B%22uid%22%3A2023778179%2C%22pru%22%3A2023778179%2C%22user_name%22%3A%22112**%40q**.com%22%2C%22nickname%22%3A%22lemon%5Cu4e36%5Cu4e03%22%2C%22pnickname%22%3A%22lemon%5Cu4e36%5Cu4e03%22%2C%22type%22%3A4%2C%22email%22%3A%22112**%40q**.com%22%7D; P00010=2023778179; P01010=1642780800; P00PRU=2023778179; P000email=""; QC005=23b2a-6d74cc3e9625598ad895da9c2efa7305-21; QC112=weid1642735672302';
+var cookie = '';
 
 let P00001 = '37OgeAFNkAQ79iup4C5m2QQY0ezXZgpscpWbm2aM9TGrvKalr7ZQRSxkIRb2LwllG8R798'; //无需填写 自动取cookie内容拆分
 let P00003 = '2023778179'; //无需填写 自动取cookie内容拆分
