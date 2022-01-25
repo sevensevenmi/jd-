@@ -51,11 +51,9 @@ const JD_API_HOST = `https://m.jingxi.com`;
             }
         }
     }
-    //let res = await getAuthorShareCode('http://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq2.json')
-    let res = [ ]
+    let res = await getAuthorShareCode('https://qxhut.cn/json/ttysq2.json')
     if (!res) {
-        //res = await getAuthorShareCode('https://gitee.com/KingRan521/JD-Scripts/raw/master/shareCodes/ttysq2.json')
-        res =  [ ]
+        res = await getAuthorShareCode('https://qxhut.cn/json/ttysq2.json')
     }
     if (res) {
         authorCode = res.sort(() => 0.5 - Math.random())

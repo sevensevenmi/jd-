@@ -7,7 +7,7 @@ const $ = new Env("老家定时重启猫");
 CMCCAdmin
 aDm8H%MdA
 cron:
-58 1,3,5,7,9,11,13,15,17,19,21,23 * * * cqlj.py
+58 */2 * * * cqlj.py
 """
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
