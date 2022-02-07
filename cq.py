@@ -35,7 +35,7 @@ driver.find_element(By.XPATH,"/html/body/div[1]/div[5]/div/div/div/div/form/div[
 for i in range(10):
     print(driver.title)
 driver.get("http://192.168.1.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
-driver.find_element(By.XPATH,"/html/body/div[3]/div[3]/div[3]/div[2]/table/tbody/tr[1]/td/input").click()
+driver.find_element(By.XPATH,"/html/body/div[3]/div[3]/div[2]/div[2]/table/tbody/tr[1]/td/input").click()
 driver.find_element(By.XPATH,"/html/body/div[6]/table/tbody/tr[3]/td/input[1]").click()
 for i in range(10):
     print("success restart!!!")
