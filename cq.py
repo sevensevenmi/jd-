@@ -32,12 +32,19 @@ driver.find_element(By.NAME,"username").send_keys(username)
 driver.execute_script('document.getElementById("logincode").value="";')
 driver.find_element(By.NAME,"logincode").send_keys(password)
 driver.find_element(By.XPATH,"/html/body/div[1]/div[5]/div/div/div/div/form/div[4]/a[1]").click()
-for i in range(10):
-    print(driver.title)
+
 driver.get("http://192.168.1.1/getpage.gch?pid=1002&nextpage=manager_dev_restart_t.gch")
+time.sleep(1)
+
+for i in range(5):
+    print(driver.find_element(By.XPATH,"/html/body/div[3]/div[1]/div/span").text)
+
+print(driver.find_element(By.ID,"Submit1").text)
 driver.find_element(By.ID,"Submit1").click()
-driver.find_element(By.XPATH,"/html/body/div[6]/table/tbody/tr[3]/td/input[1]").click()
-for i in range(10):
+time.sleep(1)
+driver.find_element(By.NAME,"msgconfirmb").click()
+
+for i in range(5):
     print("success restart!!!")
 
 time.sleep(120)
