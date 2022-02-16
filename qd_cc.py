@@ -98,7 +98,7 @@ def test2():
     )
 
     response = requests.get('https://mobile.caocaokeji.cn/mobile-tools/activity/C3570DEA3AFA788A', headers=headers, params=params).text
-    print(response)
+    print(response.json())
 
 def test2():
     headers = {

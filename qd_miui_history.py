@@ -35,9 +35,11 @@ def main():
     }
 
     response = requests.post('https://miuiver.com/wp-admin/admin-ajax.php', headers=headers, data=data)
-    if "201" or "200" in response:
-        print("MIUI历史版本签到")
+    data=response.json()
+    if "登录" in data["msg"]:
+        print("cookie 失效")
     else:
-        print(response.text)
+        print(data["msg"])
+
 if __name__=='__main__':
     main()
