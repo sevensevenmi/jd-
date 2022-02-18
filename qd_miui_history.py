@@ -35,11 +35,7 @@ def main():
     }
 
     response = requests.post('https://miuiver.com/wp-admin/admin-ajax.php', headers=headers, data=data)
-    data=response.json()
-    if "登录" in data["msg"]:
-        print("cookie 失效")
-    else:
-        print(data["msg"])
+    print(response.json())
 
 if __name__=='__main__':
     main()
