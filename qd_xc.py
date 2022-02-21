@@ -21,7 +21,7 @@ def start():
     }
     url = url1
     pyload = {"platform":"APP","openId":"","rmsToken":"","head":{"cid":"32001043510277064413","ctok":"","cver":"842.004","lang":"01","sid":"8913","syscode":"32","auth":"4493CB6DEE67AE79793E1FF896025451459F0A8A6781D2E17383D65CE06068F7","xsid":"","extension":[]}}
-    response = requests.post(url, data=json.dumps(pyload), headers=headers).text
+    response = requests.post(url, data=json.dumps(pyload), headers=headers).json()
 
     if "当日已签到" in response:
         print("当日已签到")
