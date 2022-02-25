@@ -26,8 +26,9 @@ def start():
       'qpVersion': '63'
     }
 
-    response = requests.post('https://user.qunar.com/webapi/member/signIndexV2.htm', headers=headers, data=data).text
+    response = requests.post('https://user.qunar.com/webapi/member/signIndexV2.htm', headers=headers, data=data).json()
     if "每日签到" in response:
+        print(response)
         print("去哪儿签到成功")
     else:
         print(response)
