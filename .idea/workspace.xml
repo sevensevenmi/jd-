@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b78443-55db-483d-b9d1-c4b81d6e866a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qd_qnr.py" beforeDir="false" afterPath="$PROJECT_DIR$/qd_qnr.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +121,8 @@
       <workItem from="1645061651824" duration="761000" />
       <workItem from="1645149858600" duration="867000" />
       <workItem from="1645414744102" duration="2127000" />
+      <workItem from="1646114211952" duration="24000" />
+      <workItem from="1646114237172" duration="29000" />
     </task>
     <servers />
   </component>
