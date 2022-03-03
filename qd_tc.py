@@ -3,7 +3,7 @@ const $ = new Env("同程签到");
 同程签到
 
 cron:
-0 7 * * * qd_.py
+0 7 * * * qd_tc.py
 """
 
 # -*- coding: utf8 -*-
