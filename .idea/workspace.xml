@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b78443-55db-483d-b9d1-c4b81d6e866a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qd_qcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/qd_qcs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qd_miui_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/qd_miui_history.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.qd_qcs">
+  <component name="RunManager" selected="Python.qd_miui_history">
     <configuration name="qd_miui_history" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="jd-" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,10 +124,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.qd_miui_history" />
         <item itemvalue="Python.qd_qcs" />
         <item itemvalue="Python.qd_qnr" />
         <item itemvalue="Python.qd_xc" />
-        <item itemvalue="Python.qd_miui_history" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +148,7 @@
       <workItem from="1646114211952" duration="24000" />
       <workItem from="1646114237172" duration="29000" />
       <workItem from="1647310631549" duration="13000" />
-      <workItem from="1647310646417" duration="693000" />
+      <workItem from="1647310646417" duration="868000" />
     </task>
     <servers />
   </component>
@@ -156,9 +156,9 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cq_py$qd_qcs.coverage" NAME="qd_qcs Coverage Results" MODIFIED="1647311280952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cq_py$qd_miui_history.coverage" NAME="qd_miui_history Coverage Results" MODIFIED="1645150052021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cq_py$qd_qcs.coverage" NAME="qd_qcs Coverage Results" MODIFIED="1647311356154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cq_py$qd_xc.coverage" NAME="qd_xc Coverage Results" MODIFIED="1645414798687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cq_py$qd_miui_history.coverage" NAME="qd_miui_history Coverage Results" MODIFIED="1647311513685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cq_py$qd_qnr.coverage" NAME="qd_qnr Coverage Results" MODIFIED="1645414979523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
