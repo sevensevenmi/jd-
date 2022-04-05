@@ -7,6 +7,7 @@
     <list default="true" id="c5b78443-55db-483d-b9d1-c4b81d6e866a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cq.py" beforeDir="false" afterPath="$PROJECT_DIR$/cq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cqlj.py" beforeDir="false" afterPath="$PROJECT_DIR$/cqlj.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +27,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/无限试用插件/ide-eval-resetter-2.3.5.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -43,6 +45,11 @@
       <workItem from="1635663083243" duration="57000" />
       <workItem from="1644158326057" duration="734000" />
       <workItem from="1644234398116" duration="2939000" />
+      <workItem from="1647447991130" duration="75000" />
+      <workItem from="1647448077226" duration="21000" />
+      <workItem from="1647448106697" duration="16000" />
+      <workItem from="1647768975307" duration="654000" />
+      <workItem from="1649151002266" duration="705000" />
     </task>
     <servers />
   </component>
