@@ -52,7 +52,7 @@ t=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 bip = urllib.request.urlopen('http://ifconfig.me/ip').read()
 #ip = str(bip, encoding="utf-8")
 ip = bytes.decode(bip)
-with open("/ql/log/sevensevenmi_jd-_cq/cqrecord.txt", 'a') as file_object:
+with open("/ql/data/log/sevensevenmi_jd-_cq/cqrecord.txt", 'a') as file_object:
     file_object.write(t)
     file_object.write('---重启成功---出口ip:')
     file_object.write(ip)
