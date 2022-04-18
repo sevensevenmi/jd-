@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5b78443-55db-483d-b9d1-c4b81d6e866a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cq.py" beforeDir="false" afterPath="$PROJECT_DIR$/cq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cqlj.py" beforeDir="false" afterPath="$PROJECT_DIR$/cqlj.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/无限试用插件/ide-eval-resetter-2.3.5.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -50,6 +48,7 @@
       <workItem from="1647448106697" duration="16000" />
       <workItem from="1647768975307" duration="654000" />
       <workItem from="1649151002266" duration="705000" />
+      <workItem from="1650089203496" duration="63000" />
     </task>
     <servers />
   </component>
