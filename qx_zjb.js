@@ -7,7 +7,7 @@ export InviterPin="dS%2Bp85VyjydPuAOOnFP%2Faw%3D%3D" ##你的邀请码
 
 [task_local]
 #极速版赚金币
-0 5 * * * http://nm66.top/qx_zjb.js, tag=极速版赚金币, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0,5 * * * http://nm66.top/qx_zjb.js, tag=极速版赚金币, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 const $ = new Env('七Mi极速版赚金币');
 const notify = $.isNode() ? require('./sendNotify') : '';
