@@ -324,7 +324,7 @@ async function appendRewardInfoToNotify(cookieIndex, cookie) {
             await openRedPacket(cookie)
 
             // 等待一会，避免请求过快
-            await $.wait(3000)
+            await $.wait(6000)
         }
 
         console.info(`领取完毕，重新查询最新锦鲤红包信息`)
