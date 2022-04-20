@@ -1,7 +1,7 @@
 
    
 /*
-愤怒的锦鲤
+七MI的锦鲤
 更新时间：2022-04-05
 备注：高速并发请求，专治偷助力。在kois环境变量中填入需要助力的pt_pin，有多个请用@符号连接
 接入了代理 https://www.xiequ.cn/ 可以去嫖携趣的 每日1000免费ip 选择1个ip txt文本返回即可
@@ -13,9 +13,9 @@ export gua_cleancart_PandaToken = ''
 export Rabbit_Url =""
 
 [Script]
-cron "30 0,8  * * *" qx_jinli.js,tag=愤怒的锦鲤
+cron "30 0,8  * * *" qx_jinli.js,tag=七MI的锦鲤
 */
-const $ = new Env("愤怒的锦鲤多接口版 - LingFeng ")
+const $ = new Env("七MI的锦鲤 ")
 require("global-agent/bootstrap");
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 //const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random() * 4 + 10)}.${Math.ceil(Math.random() * 4)};${randomString(40)}`
