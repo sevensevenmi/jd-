@@ -256,36 +256,17 @@ function randomWord(n: number = 1) {
 
 async function getshareCodeHW(key: string) {
   let shareCodeHW: string[] = []
-  for (let i = 0; i < 5; i++) {
-    try {
-      let {data}: any = await axios.get('https://api.jdsharecode.xyz/api/HW_CODES')
-      shareCodeHW = data[key] || []
-      if (shareCodeHW.length !== 0) {
-        break
-      }
-    } catch (e) {
-      console.log("getshareCodeHW Error, Retry...")
-      await wait(getRandomNumberByRange(2000, 6000))
-    }
-  }
+
+     shareCodeHW = []
+ 
   return shareCodeHW
 }
 
 async function getShareCodePool(key: string, num: number) {
   let shareCode: string[] = []
-  for (let i = 0; i < 2; i++) {
-    try {
-      let {data}: any = await axios.get(`https://api.jdsharecode.xyz/api/${key}/${num}`)
-      shareCode = data.data || []
-      console.log(`随机获取${num}个${key}成功：${JSON.stringify(shareCode)}`)
-      if (shareCode.length !== 0) {
-        break
-      }
-    } catch (e) {
-      console.log("getShareCodePool Error, Retry...")
-      await wait(getRandomNumberByRange(2000, 6000))
-    }
-  }
+
+   shareCode = []
+
   return shareCode
 }
 

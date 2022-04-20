@@ -3,6 +3,7 @@ import {Md5} from "ts-md5"
 import * as dotenv from "dotenv"
 import {existsSync, readFileSync} from "fs"
 import {sendNotify} from './sendNotify'
+import {rejects} from "assert";
 
 dotenv.config()
 
@@ -99,7 +100,7 @@ async function getFarmShareCode(cookie: string) {
 
 async function requireConfig(check: boolean = false): Promise<string[]> {
   let cookiesArr: string[] = []
-  const jdCookieNode = require('../jdCookie.js')
+  const jdCookieNode = require('./jdCookie.js')
   let keys: string[] = Object.keys(jdCookieNode)
   for (let i = 0; i < keys.length; i++) {
     let cookie = jdCookieNode[keys[i]]
@@ -212,6 +213,18 @@ function getJxToken(cookie: string, phoneId: string = '') {
   }
 }
 
+function exceptCookie(filename: string = 'x.ts') {
+  let except: any = []
+  if (existsSync('./utils/exceptCookie.json')) {
+    try {
+      except = JSON.parse(readFileSync('./utils/exceptCookie.json').toString() || '{}')[filename] || []
+    } catch (e) {
+      console.log('./utils/exceptCookie.json JSON格式错误')
+    }
+  }
+  return except
+}
+
 function randomString(e: number, word?: number) {
   e = e || 32
   let t = word === 26 ? "012345678abcdefghijklmnopqrstuvwxyz" : "0123456789abcdef", a = t.length, n = ""
@@ -240,6 +253,43 @@ function randomWord(n: number = 1) {
   }
   return rnd
 }
+
+async function getshareCodeHW(key: string) {
+  let shareCodeHW: string[] = []
+
+     shareCodeHW = []
+ 
+  return shareCodeHW
+}
+
+async function getShareCodePool(key: string, num: number) {
+  let shareCode: string[] = []
+
+   shareCode = []
+
+  return shareCode
+}
+
+/*async function wechat_app_msg(title: string, content: string, user: string) {
+  let corpid: string = "", corpsecret: string = ""
+  let {data: gettoken} = await axios.get(`https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}&corpsecret=${corpsecret}`)
+  let access_token: string = gettoken.access_token
+
+  let {data: send} = await axios.post(`https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=${access_token}`, {
+    "touser": user,
+    "msgtype": "text",
+    "agentid": 1000002,
+    "text": {
+      "content": `${title}\n\n${content}`
+    },
+    "safe": 0
+  })
+  if (send.errcode === 0) {
+    console.log('企业微信应用消息发送成功')
+  } else {
+    console.log('企业微信应用消息发送失败', send)
+  }
+}*/
 
 function obj2str(obj: object) {
   return JSON.stringify(obj)
@@ -272,31 +322,39 @@ async function jdpingou() {
   return `jdpingou;iPhone;5.19.0;${version};${randomString(40)};network/wifi;model/${device};appBuild/100833;ADID/;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/0;hasOCPay/0;supportBestPay/0;session/${getRandomNumberByRange(10, 90)};pap/JA2019_3111789;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148`
 }
 
-function get(url: string, prarms?: string, headers?: any) {
-  return axios.get(url, {
-    params: prarms,
-    headers: headers
-  })
-    .then(res => {
-      if (typeof res.data === 'string' && res.data.match(/^jsonpCBK/)) {
-        return JSON.parse(res.data.match(/jsonpCBK.?\(([\w\W]*)\);/)[1])
+function get(url: string, prarms?: string, headers?: any): Promise<any> {
+  return new Promise((resolve, reject) => {
+    axios.get(url, {
+      params: prarms,
+      headers: headers
+    }).then(res => {
+      if (typeof res.data === 'string' && res.data.includes('jsonpCBK')) {
+        resolve(JSON.parse(res.data.match(/jsonpCBK.?\(([\w\W]*)\);?/)[1]))
       } else {
-        return res.data
+        resolve(res.data)
       }
+    }).catch(err => {
+      reject({
+        code: err?.response?.status || -1,
+        msg: err?.response?.statusText || err.message || 'error'
+      })
     })
-    .catch(err => {
-      console.log(err?.response?.status, err?.response?.statusText)
-    });
+  })
 }
 
 function post(url: string, prarms?: string | object, headers?: any): Promise<any> {
-  return axios.post(url, prarms, {
-    headers: headers
+  return new Promise((resolve, reject) => {
+    axios.post(url, prarms, {
+      headers: headers
+    }).then(res => {
+      resolve(res.data)
+    }).catch(err => {
+      reject({
+        code: err?.response?.status || -1,
+        msg: err?.response?.statusText || err.message || 'error'
+      })
+    })
   })
-    .then(res => res.data)
-    .catch(err => {
-      console.log(err?.response?.status, err?.response?.statusText)
-    });
 }
 
 export default USER_AGENT
@@ -309,9 +367,11 @@ export {
   getRandomNumberByRange,
   requestAlgo,
   getJxToken,
+  exceptCookie,
   randomString,
   o2s,
   randomNumString,
+  getshareCodeHW,
   getShareCodePool,
   randomWord,
   obj2str,
