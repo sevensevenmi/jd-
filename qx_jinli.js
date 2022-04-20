@@ -1,16 +1,34 @@
+
+   
 /*
-cron "30 0,8  * * *" qx_jinli.js
+愤怒的锦鲤
+更新时间：2022-04-05
+备注：高速并发请求，专治偷助力。在kois环境变量中填入需要助力的pt_pin，有多个请用@符号连接
+接入了代理 https://www.xiequ.cn/ 可以去嫖携趣的 每日1000免费ip 选择1个ip txt文本返回即可
+export  KOI_FAIR_MODE="true"
+#其他变量
+export kois ="pt_pin@pt_pin@pt_pin" 指定车头pin
+export PROXY_URL ="" ip代理api
+export gua_cleancart_PandaToken = ''
+export Rabbit_Url =""
+
+[Script]
+cron "30 0,8  * * *" qx_jinli.js,tag=愤怒的锦鲤
 */
-const $ = new Env("七MI的锦鲤")
+const $ = new Env("愤怒的锦鲤多接口版 - LingFeng ")
+require("global-agent/bootstrap");
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random() * 4 + 10)}.${Math.ceil(Math.random() * 4)};${randomString(40)}`
-//const ua = "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; Mi Note 2 Build/OPR1.170623.032) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.1.1"
+//const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random() * 4 + 10)}.${Math.ceil(Math.random() * 4)};${randomString(40)}`
+const ua = "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; Mi Note 2 Build/OPR1.170623.032) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.1.1"
 let fair_mode = process.env.KOI_FAIR_MODE == "true" ? true : false
 let chetou_number = process.env.KOI_CHETOU_NUMBER ? Number(process.env.KOI_CHETOU_NUMBER) : 0
-let RabbitUrl = process.env.Rabbit_Url ?? ""; // logurl
 var kois = process.env.kois ?? ""
 let proxyUrl = process.env.PROXY_URL ?? ""; // 代理的api地址
 let proxy = "";
+let RabbitUrl = process.env.Rabbit_Url ?? ""; // logurl
+let jdPandaToken = '';
+jdPandaToken = $.isNode() ? (process.env.gua_cleancart_PandaToken ? process.env.gua_cleancart_PandaToken : `${jdPandaToken}`) : ($.getdata('gua_cleancart_PandaToken') ? $.getdata('gua_cleancart_PandaToken') : `${jdPandaToken}`);
+let nums = 0;
 let cookiesArr = []
 let scriptsLogArr = []
 var tools = []
@@ -26,6 +44,8 @@ let notify, allMessage = '';
 
 !(async () => {
     await requireConfig()
+    console.log(`请填写Panda获取的Token,变量是gua_cleancart_PandaToke或者填写Rabbit获取的logurl，变量是Rabbit_Url`)
+    console.log(`\n 示例: logs 值 "random":"75831714","log":"1646396568418~1jD94......太长省略...Qwt9i"\n`)
     console.log(`当前配置的车头数目：${chetou_number}，是否开启公平模式：${fair_mode}`)
     console.log("开始获取用于助力的账号列表")
     for (let i in cookiesArr) {
@@ -387,9 +407,8 @@ async function with_retry(ctx = "", callback_func, max_retry_times = 3, retry_in
 }
 
 async function openRedPacket(cookie) {
-    logs = await rabbitLogs()
-    //let random = decodeURIComponent(logs.match(/"random":"(\d+)"/)[1]),log = decodeURIComponent(logs.match(/"log":"(.*)"/)[1])
-   let random = logs["random"].toString(),log =logs["log"].toString()
+	logs = await rabbitLogs()
+	let random = logs["random"].toString(),log =logs["log"].toString()
     // https://api.m.jd.com/api?appid=jinlihongbao&functionId=h5receiveRedpacketAll&loginType=2&client=jinlihongbao&t=1638189287348&clientVersion=10.2.4&osVersion=-1
     let resp = await requestApi('h5receiveRedpacketAll', cookie, {
         "random": random,
