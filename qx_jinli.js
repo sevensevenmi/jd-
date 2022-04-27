@@ -592,7 +592,7 @@ function rabbitLogs(){
         $.get(url, async(err, resp, data) => {
             try {
                 data = JSON.parse(data);
-                if (data && data.success == "true") {
+                if (data && data.data.status == 0) {
                     logs = {
                         random: data.data.random,
                         log: data.data.log
