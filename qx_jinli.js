@@ -210,7 +210,7 @@ function shuffle(array) {
 
 async function getHelpInfoForCk(cookieIndex, cookie) {
     console.log(`开始请求第 ${cookieIndex} 个账号的信息`)
-    logs = await getJinliLogs()
+    logs = await rabbitLogs()
     if(proxyUrl){
         if (nums % 8 == 0) {
             await getProxy();
@@ -546,7 +546,7 @@ function pandaLogs(){
     var logs = '';
     return new Promise((resolve) => {
         let url = {
-            url: "https://api.jds.codes/jd/log",
+            url: "https://api.zhezhe.cf/jd/log",
             followRedirect: false,
             headers: {
                 'Accept': '*/*',
@@ -592,7 +592,7 @@ function rabbitLogs(){
         $.get(url, async(err, resp, data) => {
             try {
                 data = JSON.parse(data);
-                if (data && data.data.status == 0) {
+                if (data && data.success == "true") {
                     logs = {
                         random: data.data.random,
                         log: data.data.log
