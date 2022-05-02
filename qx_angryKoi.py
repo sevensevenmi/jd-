@@ -17,7 +17,7 @@ import logging  # 用于日志输出
 
 import requests
 
-from ./function/angryKoi_util import taskPostUrl
+from angryKoi_util import taskPostUrl
 
 if "LOG_DEBUG" in os.environ:  # 判断调试模式变量
     logging.basicConfig(level=logging.DEBUG, format='%(message)s')  # 设置日志为 Debug等级输出
