@@ -1,7 +1,7 @@
 """
 const $ = new Env("定时重启路由");
-在 11 23 的58分重启猫
-定时重启猫
+在 11 23 的58分重启路由
+定时重启路由
 
 路由器账号密码
 CMCCAdmin
@@ -24,7 +24,7 @@ driver.get("http://192.168.68.1/")
 time.sleep(2)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/form/div/div/div[1]/input").send_keys(passwd)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[2]/div/div[2]/form/button").click()
-time.sleep(1)
+time.sleep(3)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div[4]/div[2]/button/span/i").click()
 
 time.sleep(1)
