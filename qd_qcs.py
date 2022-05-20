@@ -8,22 +8,37 @@ cron:
 
 
 
-import requests
+import requests,time
 
+t = time.time()
+
+tamp = int(round(t * 1000))
 headers = {
-    'Host': 'iws.watsonsvip.com.cn',
+    'Host': 'mystore-gw.watsonsvip.com.cn',
     'Connection': 'keep-alive',
-    'Content-Length': '2',
-    'authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1bmlvbklkIjoib1dIZFl3UmRLVEdySERHT0U4RU1Qaks5UjY5RSIsInNlc3Npb25LZXkiOiI2ZFFESzl5c21EYlYyZXQvZGk5SWp3PT0iLCJsb2dpblR5cGUiOiJ3eCIsInBob25lIjoiMTg3Mjk0NjkyMDgiLCJvcGVuSWQiOiJvWVlUOTQxRkVFMEZvWXMwa19HNGw5QUktYXhvIiwibG9naW5CeSI6InBob25lIiwiYXBwSWQiOiJibXBmZGVjMjFmYTk1IiwibWFpbk1lbWJlcklkIjoiMTkwMzkxNzQwNTYiLCJsb2dpblBob25lIjoiMTg3Mjk0NjkyMDgiLCJwaG9uZU1haW5NZW1iZXJJZCI6IjE5MDM5MTc0MDU2IiwiaWQiOjIyNjgyODUxLCJtZW1iZXJJZCI6IjE5MDM5MTc0MDU2IiwiZXhwIjoxNjUxMTA0MTE0fQ.aIdudAeq5RIR2NqWYOx2k-3DeTywOPsOA5xUYq82SIYl4-gMHPGgxHsqaK4fv_gyfQ8DDNvABNHV0Qp5lghOGw',
-    'charset': 'utf-8',
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 12; M2012K10C Build/SP1A.210812.016; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3193 MMWEBSDK/20220204 Mobile Safari/537.36 MMWEBID/7998 MicroMessenger/8.0.20.2100(0x28001439) Process/appbrand1 WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64 MiniProgramEnv/android',
-    'Accept-Encoding': 'gzip,compress,br,deflate',
-    'Referer': 'https://servicewechat.com/wxa828a9623404f124/269/page-frame.html',
+    # 'Content-Length': '101',
+    'Accept': 'application/json, text/plain, */*',
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 12; M2012K10C Build/SP1A.210812.016; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/96.0.4664.104 Mobile Safari/537.36 watsons/5.19.0/199',
+    'Origin': 'https://mystore-h5.watsonsvip.com.cn',
+    'X-Requested-With': 'com.watsons.mobile',
+    'Sec-Fetch-Site': 'same-site',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Dest': 'empty',
+    'Referer': 'https://mystore-h5.watsonsvip.com.cn/',
+    # 'Accept-Encoding': 'gzip, deflate',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
 }
-json_data = {}
+
+data = {
+    'serverName': 'APPSIGN',
+    'method': 'post',
+    'uri': 'appsign//v2/signin',
+    'access_token': 'N1NupAT3gUVKzfB4ZYZWc90Tef3N',
+}
+
 
 def test():
-    response = requests.post('https://iws.watsonsvip.com.cn/watsons-member-center/mp/checkin/user/doCheckIn', headers=headers, json=json_data)
+    response = requests.post('https://mystore-gw.watsonsvip.com.cn/peapod/common_api?device_id=675ffd87f974fd657ab67c2831124a05×tamp=%s'%(tamp)+'&session_token=G1f6fe646f129dfe26a830d299e80d61&app_key=7DgWtsq0yGuvG26UPMdHKXRk4wVLTp52&store_no=9114&access_token=N1NupAT3gUVKzfB4ZYZWc90Tef3N&api_sign=bdb39dd85d3a72fb08a92cc515f82166', headers=headers, data=data)
     print(response.json())
 
 if __name__=='__main__':
