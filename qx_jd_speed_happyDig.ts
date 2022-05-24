@@ -16,7 +16,7 @@ interface INVITE {
   inviteCode: string
 }
 
-let shareCodes: INVITE[] = [], shareCodesHW = [], shareCodesSelf: INVITE[] = []
+let shareCodes: INVITE[] = [],  shareCodesSelf: INVITE[] = []
 
 !(async () => {
   let cookiesArr: string[] = await requireConfig()
@@ -47,14 +47,8 @@ let shareCodes: INVITE[] = [], shareCodesHW = [], shareCodesSelf: INVITE[] = []
       console.log(`\n开始【京东账号${index + 1}】${UserName}\n`)
       await requestAlgo('ce6c2', 'jdltapp;')
 
-      if (shareCodesHW.length === 0) {
-        shareCodesHW = await getshareCodeHW('fcwb')
-      }
-      if (index === 0 && cookiesArr.length === 1) {
-        shareCodes = Array.from(new Set([...shareCodesHW, ...shareCodesSelf]))
-      } else {
-        shareCodes = Array.from(new Set([...shareCodesSelf, ...shareCodesHW]))
-      }
+       shareCodes = shareCodesSelf
+
 
       for (let code of shareCodesSelf) {
         console.log(`去助力 ${code.inviteCode}`)
