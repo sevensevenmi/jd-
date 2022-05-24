@@ -7,7 +7,7 @@ const $ = new Env("定时重启路由");
 CMCCAdmin
 aDm8H%MdA
 cron:
-58 11,23 * * * cq_ly.py
+58 5,11,15,23 * * * cq_ly.py
 """
 
 from selenium import webdriver
@@ -43,7 +43,7 @@ bip_4 = urllib.request.urlopen('http://4.ipw.cn/').read()
 #ip = str(bip, encoding="utf-8")
 ip = bytes.decode(bip_4)
 print(ip)
-with open("/ql/data/log/sevensevenmi_jd-_cq/cq_lyrecord.txt", 'a') as file_object:
+with open("/ql/data/log/sevensevenmi_jd-_cq_ly/cq_lyrecord.txt", 'a') as file_object:
     file_object.write(t)
     file_object.write('---重启成功---出口ip:')
     file_object.write(ip)
