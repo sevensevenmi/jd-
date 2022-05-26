@@ -2,7 +2,8 @@
 #极速版赚金币
 ##入口为极速版 百元生活费 赚金币 邀请好友
 ##第一次运行可不填写邀请码 运行一次查看自己的邀请码
-export InviterPin="dS%2Bp85VyjydPuAOOnFP%2Faw%3D%3D" ##你的邀请码
+export InviterPin="avk0N%2FBuhdo%2BzEM6hbKzsA%3D%3D" ##你的邀请码
+##助力逻辑：填写你的邀请码变量之后会助力你填写的邀请码
 
 
 [task_local]
@@ -19,9 +20,13 @@ let cookiesArr = [], cookie = '', message;
 let InviterPin = ''; //
 
 
-if (process.env.InviterPin) {
+if ($.isNode() && process.env.InviterPin) {
   InviterPin = process.env.InviterPin;
 }
+if (InviterPin.length == 0) {
+  console.log(`\n您未填写邀请码变量，请去环境变量中填写变量\n`);
+}
+
 
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -59,11 +64,14 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       }
      
 
-       await info()
-          
+      await info()
+      if (InviterPin.length != 0) {
         await help()
-
-
+      } else {
+        await help2("zjb",Math.random() > 0.5 ? "avk0N%2FBuhdo%2BzEM6hbKzsA%3D%3D" : "avk0N%2FBuhdo%2BzEM6hbKzsA%3D%3D")        
+      }
+    }
+  }
 
     }
   }
@@ -77,41 +85,37 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
 
 function info() {
-    return new Promise(async (resolve) => {
-
-                let options = {
-    url: `https://api.m.jd.com`,
-
-    body: `functionId=TaskInviteService&body={"method":"inviteTaskHomePage","data":{"channel":"1"}}&appid=market-task-h5&uuid=7303439343432346-7356431353233311&eu=7303439343432341&fv=7356431353233321&_t=1623475839367`,
-headers: {
-"Origin": "https://assignment.jd.com",
-"Host": "api.m.jd.com",
-"User-Agent": "jdltapp;android;3.5.0;10;7303439343432346-7356431353233323;network/wifi;model/PCAM00;addressid/4228801336;aid/7049442d7e415232;oaid/;osVer/29;appBuild/1587;psn/jkWXTyfQA2PDVmg3OkxOiWnHy7pHXWA |155;psq/12;adk/;ads/;pap/JA2020_3112531|3.5.0|ANDROID 10;osv/10;pv/36.36;jdv/;ref/com.jd.jdlite.lib.mission.allowance.AllowanceFragment;partner/oppo;apprpd/Allowance_Registered;eufv/1;Mozilla/5.0 (Linux; Android 10; PCAM00 Build/QKQ1.190918.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045140 Mobile Safari/537.36",
-      "Cookie": cookie,
+  return new Promise(async (resolve) => {
+    let options = {
+      url: `https://api.m.jd.com`,
+      body: `functionId=TaskInviteService&body={"method":"inviteTaskHomePage","data":{"channel":"1"}}&appid=market-task-h5&uuid=7303439343432346-7356431353233311&eu=7303439343432341&fv=7356431353233321&_t=1623475839367`,
+      headers: {
+        "Origin": "https://assignment.jd.com",
+        "Host": "api.m.jd.com",
+        "User-Agent": "jdltapp;android;3.5.0;10;7303439343432346-7356431353233323;network/wifi;model/PCAM00;addressid/4228801336;aid/7049442d7e415232;oaid/;osVer/29;appBuild/1587;psn/jkWXTyfQA2PDVmg3OkxOiWnHy7pHXWA |155;psq/12;adk/;ads/;pap/JA2020_3112531|3.5.0|ANDROID 10;osv/10;pv/36.36;jdv/;ref/com.jd.jdlite.lib.mission.allowance.AllowanceFragment;partner/oppo;apprpd/Allowance_Registered;eufv/1;Mozilla/5.0 (Linux; Android 10; PCAM00 Build/QKQ1.190918.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045140 Mobile Safari/537.36",
+        "Cookie": cookie,
       }
-                }
-      
-        $.post(options, async (err, resp, data) => {
-            try {
-
-                    //data = data.match(/(\{[^()]+\}.+)/)[1]
-
-                    //console.log(data)
-                    const reust = JSON.parse(data)
-                    //console.log(reust)
-                    if(reust.code == 0){
-                    $.log("你的邀请码："+reust.data.encryptionInviterPin)
-                }else
-                
-                    console.log(data.message)
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
+    }
+    $.post(options, async (err, resp, data) => {
+      try {
+        if (err) {
+          $.logErr(err);
+        } else {
+          reust = JSON.parse(data)
+        }
+        if (reust.code === 0) {
+          $.log("\n【邀请码为】" + reust.data.encryptionInviterPin)
+        } else
+          console.log(data.message)
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     });
+  });
 }
+
 
 function help() {
     return new Promise(async (resolve) => {
@@ -152,21 +156,35 @@ headers: {
 
 
 
-async function taskPostUrl(functionId,body) {
-  return {
-    url: `${JD_API_HOST}`,
-    body: `functionId=${functionId}&body=${escape(JSON.stringify(body))}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=6898c30638c55142969304c8e2167997fa59eb54&t=1622588448365`,
-    headers: {
-      'Cookie': cookie,
-      'Host': 'api.m.jd.com',
-      'Connection': 'keep-alive',
-      'Content-Type': 'application/x-www-form-urlencoded',
-      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
-      'Accept-Language': 'zh-cn',
-      'Accept-Encoding': 'gzip, deflate, br',
+function help2(name,code) {
+  return new Promise(async (resolve) => {
+    let options = {
+      url: `https://api.m.jd.com`,
+      body: `functionId=TaskInviteService&body={"method":"participateInviteTask","data":{"channel":"1","encryptionInviterPin":"${code}","type":1}}&appid=market-task-h5&uuid=7303439343432346-7356431353233311&eu=7303439343432341&fv=7356431353233321&_t=1623475839367`,
+      headers: {
+        "Origin": "https://assignment.jd.com",
+        "Host": "api.m.jd.com",
+        "User-Agent": "jdltapp;android;3.5.0;10;7303439343432346-7356431353233323;network/wifi;model/PCAM00;addressid/4228801336;aid/7049442d7e415232;oaid/;osVer/29;appBuild/1587;psn/jkWXTyfQA2PDVmg3OkxOiWnHy7pHXWA |155;psq/12;adk/;ads/;pap/JA2020_3112531|3.5.0|ANDROID 10;osv/10;pv/36.36;jdv/;ref/com.jd.jdlite.lib.mission.allowance.AllowanceFragment;partner/oppo;apprpd/Allowance_Registered;eufv/1;Mozilla/5.0 (Linux; Android 10; PCAM00 Build/QKQ1.190918.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045140 Mobile Safari/537.36",
+        "Cookie": cookie,
+      }
     }
-  }
+    //console.log(options['body'])
+    $.post(options, async (err, resp, data) => {
+      try {
+        const reust = JSON.parse(data)
+        if (reust.code === 0) {
+          $.log(`赚金币助力【${name}】成功，感谢！`)
+        } else
+          console.log(reust.message)
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
+    });
+  });
 }
+
 
 
 async function TotalBean() {
@@ -213,17 +231,7 @@ async function TotalBean() {
     })
   })
 }
-async function safeGet(data) {
-  try {
-    if (typeof JSON.parse(data) == "object") {
-      return true;
-    }
-  } catch (e) {
-    console.log(e);
-    console.log(`京东服务器访问数据为空，请检查自身设备网络情况`);
-    return false;
-  }
-}
+
 function jsonParse(str) {
   if (typeof str == "string") {
     try {
