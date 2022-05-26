@@ -7,7 +7,7 @@ const $ = new Env("定时重启路由");
 CMCCAdmin
 aDm8H%MdA
 cron:
-58 5,11,15,23 * * * cq_ly.py
+58 5,11,17,23 * * * cq_ly.py
 """
 
 from selenium import webdriver
