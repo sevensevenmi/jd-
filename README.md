@@ -1,4 +1,4 @@
-# jd_study
+# study
 
 **特别声明:** 
  

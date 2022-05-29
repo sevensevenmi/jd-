@@ -17,7 +17,25 @@ import logging  # 用于日志输出
 
 import requests
 
-from angryKoi_util import taskPostUrl
+import os.path
+import platform
+import shutil
+
+systype = "x86"
+
+if os.path.exists("angryKoi_util1.so"):
+    os.remove("angryKoi_util1.so")
+
+sysver = platform.uname()
+if "aarch64" in sysver:
+    print("系统为 arm")
+    shutil.copy("angryKoi_util.so_arm", "angryKoi_util1.so")
+    systype = "arm"
+else:
+    shutil.copy("angryKoi_util.so_amd", "angryKoi_util1.so")
+    systype = "x86"
+
+from angryKoi_util1 import taskPostUrl
 
 if "LOG_DEBUG" in os.environ:  # 判断调试模式变量
     logging.basicConfig(level=logging.DEBUG, format='%(message)s')  # 设置日志为 Debug等级输出
@@ -163,7 +181,6 @@ def main():
         cookie_list_pin = [cookie for cookie in cookie_list if get_pin(cookie) in debug_pin]
     else:
         cookie_list_pin = cookie_list
-
     logger.info('*******************助力*******************\n')
     index = 0
 

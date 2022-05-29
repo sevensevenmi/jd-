@@ -1,7 +1,7 @@
 /**
  * 京喜->领88元红包
- * CK1    HW.ts -> 内部
- * CK2-n  内部   -> HW.ts
+ 内部
+
  * cron: 5 0,6,16 * * *
  */
 
@@ -12,7 +12,7 @@ import {requireConfig, wait, getshareCodeHW, randomString, randomWord, o2s} from
 const token = require('./utils/jd_jxmc.js').token
 
 let cookie: string = '', res: any = '', UserName: string, UA: string = ''
-let shareCodesSelf: string[] = [], shareCodes: string[] = [], shareCodesHW: string[] = [], jxToken: any, data: any
+let shareCodesSelf: string[] = [], shareCodes: string[] = [], jxToken: any, data: any
 
 !(async () => {
   let cookiesArr: any = await requireConfig()
@@ -47,14 +47,9 @@ let shareCodesSelf: string[] = [], shareCodes: string[] = [], shareCodesHW: stri
     await wait(1000)
     let strUserPin: string = res.Data.strUserPin
 
-    if (shareCodesHW.length === 0) {
-      shareCodesHW = await getshareCodeHW('88hb')
-    }
-    if (index === 0) {
-      shareCodes = Array.from(new Set([...shareCodesHW, ...shareCodesSelf]))
-    } else {
-      shareCodes = Array.from(new Set([...shareCodesSelf, ...shareCodesHW]))
-    }
+
+    shareCodes = shareCodesSelf
+
     for (let code of shareCodes) {
       if (code !== strUserPin) {
         console.log(`账号 ${UserName} 去助力 ${code}`)
