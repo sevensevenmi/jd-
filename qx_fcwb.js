@@ -80,7 +80,7 @@ async function run(){
 			$.helpCount++;
 		}
 		console.log('【账号'+$.index+'】已邀请人数：'+$.personNum+($.index!=1&&' 【账号1】已邀请人数：'+$.helpCount||''));
-		if($.helpCount>=40)$.hasEnd=true;
+		if($.helpCount>=30)$.hasEnd=true;
 	}catch(_0x933d6a){
 		console.log(_0x933d6a);
 	}
