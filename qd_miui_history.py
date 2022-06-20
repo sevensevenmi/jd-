@@ -11,13 +11,12 @@ cron:
 import requests
 
 cookies = {
-    'wordpress_sec_f82bae77b4519a305f00e3f66136abf7': 'zq1121734772%7C1654162513%7Ck8eCyf6agUnKxX9cZz0su1gz8jWhnTx0D7bjpZYayXz%7C5fc87cc71dcb9934d9b6e0013825b8d52025e95ee635909a446e43cf07c1892a',
-    'trdipcktrffcext': '1',
+    'wordpress_sec_f82bae77b4519a305f00e3f66136abf7': 'zq1121734772%7C1656914904%7CsXofpYWRHRrp9qmfw0Ov7v5j4Wyuc0HZEJwbGLpYdm2%7Cc8cf07b6eed1ed98d4ab59c4c7b238fc2fed2732e64a56621ea075d3dfc894f0',
     '_ga': 'GA1.2.1597023974.1652952910',
-    '_gid': 'GA1.2.1586515786.1652952910',
+    '_gid': 'GA1.2.283634491.1655705300',
     '_gat': '1',
-    'PHPSESSID': 'j2buk9t1veb8gose039gh2ip40',
-    'wordpress_logged_in_f82bae77b4519a305f00e3f66136abf7': 'zq1121734772%7C1654162513%7Ck8eCyf6agUnKxX9cZz0su1gz8jWhnTx0D7bjpZYayXz%7C9e389350a21d752efb24949fd19a84811aef7d74922ae4b494c25f7d4924e2d2',
+    'PHPSESSID': '3s4dh0rt2n6vof7ot50abjk63u',
+    'wordpress_logged_in_f82bae77b4519a305f00e3f66136abf7': 'zq1121734772%7C1656914904%7CsXofpYWRHRrp9qmfw0Ov7v5j4Wyuc0HZEJwbGLpYdm2%7C696014d906e70ed0e3116338a68d279c1a0aaee7768b4a40b643e77cd2256803',
 }
 
 headers = {
@@ -26,24 +25,23 @@ headers = {
     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
     'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
     # Requests sorts cookies= alphabetically
-    # 'cookie': 'wordpress_sec_f82bae77b4519a305f00e3f66136abf7=zq1121734772%7C1652151818%7CcoInMw1WWd0iAkvfC79mX5ZQu7cKGdz4IBKFmfy2HUc%7Cb9ab98aaf6b9e0611ff9f7dd73dfac14969ead750363c2dbf041cf47aadd75f0; _ga=GA1.2.124877360.1648781979; PHPSESSID=tmf674g7cl60gpsnb8havkehas; wordpress_logged_in_f82bae77b4519a305f00e3f66136abf7=zq1121734772%7C1652151818%7CcoInMw1WWd0iAkvfC79mX5ZQu7cKGdz4IBKFmfy2HUc%7Cf693620a625221817e11a277d38c4f01f8de01c2b09dc51a133aba34222e8c69',
+    # 'cookie': 'wordpress_sec_f82bae77b4519a305f00e3f66136abf7=zq1121734772%7C1656914904%7CsXofpYWRHRrp9qmfw0Ov7v5j4Wyuc0HZEJwbGLpYdm2%7Cc8cf07b6eed1ed98d4ab59c4c7b238fc2fed2732e64a56621ea075d3dfc894f0; _ga=GA1.2.1597023974.1652952910; _gid=GA1.2.283634491.1655705300; _gat=1; PHPSESSID=3s4dh0rt2n6vof7ot50abjk63u; wordpress_logged_in_f82bae77b4519a305f00e3f66136abf7=zq1121734772%7C1656914904%7CsXofpYWRHRrp9qmfw0Ov7v5j4Wyuc0HZEJwbGLpYdm2%7C696014d906e70ed0e3116338a68d279c1a0aaee7768b4a40b643e77cd2256803',
     'dnt': '1',
     'origin': 'https://miuiver.com',
-    'referer': 'https://miuiver.com/user-profile/',
-    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Microsoft Edge";v="100"',
+    'referer': 'https://miuiver.com/user-profile/?action=credit',
+    'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="102", "Microsoft Edge";v="102"',
     'sec-ch-ua-mobile': '?0',
     'sec-ch-ua-platform': '"Windows"',
     'sec-fetch-dest': 'empty',
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44',
     'x-requested-with': 'XMLHttpRequest',
 }
 
 data = {
     'action': 'epd_checkin',
 }
-
 
 def main():
     response = requests.post('https://miuiver.com/wp-admin/admin-ajax.php', cookies=cookies, headers=headers, data=data)
