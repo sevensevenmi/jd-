@@ -33,12 +33,12 @@ data = {
     'serverName': 'APPSIGN',
     'method': 'post',
     'uri': 'appsign//v2/signin',
-    'access_token': 'N1NupAT3gUVKzfB4ZYZWc90Tef3N',
+    'access_token': 'G35e1f7af6cc7f8b483ccd953c0b4ad7',
 }
 
 
 def test():
-    response = requests.post('https://mystore-gw.watsonsvip.com.cn/peapod/common_api?device_id=675ffd87f974fd657ab67c2831124a05×tamp=%s'%(tamp)+'&session_token=G1f6fe646f129dfe26a830d299e80d61&app_key=7DgWtsq0yGuvG26UPMdHKXRk4wVLTp52&store_no=9114&access_token=N1NupAT3gUVKzfB4ZYZWc90Tef3N&api_sign=bdb39dd85d3a72fb08a92cc515f82166', headers=headers, data=data)
+    response = requests.post('https://mystore-gw.watsonsvip.com.cn/peapod/common_api?device_id=dad962b4c8f8d633e971f1003bb92afa×tamp=%s'%(tamp)+'&session_token=G35e1f7af6cc7f8b483ccd953c0b4ad7&app_key=7DgWtsq0yGuvG26UPMdHKXRk4wVLTp52&store_no=9114&access_token=7unEUATilUrJ5sNmiSEpPhmknNs&api_sign=eb71fbe59f5b3660698362297801bc3c', headers=headers, data=data)
     print(response.json())
 
 if __name__=='__main__':
